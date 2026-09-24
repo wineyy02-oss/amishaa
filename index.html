@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Amisha</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: #eee;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+/* Background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 40%, #35151f 0%, #14090d 35%, #080808 75%);
+    z-index: -2;
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    opacity: .08;
+    pointer-events: none;
+    z-index: 10;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* Pages */
+
+.page {
+    position: absolute;
+    inset: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 1.2s ease;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.content {
+    max-width: 650px;
+}
+
+/* First screen */
+
+.small {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #b9939d;
+    margin-bottom: 25px;
+}
+
+.name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(70px, 18vw, 140px);
+    font-weight: 400;
+    letter-spacing: -4px;
+    color: #f1dce1;
+    text-shadow: 0 0 40px rgba(255,130,160,.15);
+}
+
+.line {
+    width: 60px;
+    height: 1px;
+    background: #9b596b;
+    margin: 25px auto;
+}
+
+.subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #cdb9bd;
+}
+
+/* Main text */
+
+.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 11vw, 75px);
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #f0d9df;
+}
+
+.message {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #d8c9cc;
+}
+
+.highlight {
+    color: #ef9aaa;
+}
+
+/* Button */
+
+button {
+    margin-top: 40px;
+    padding: 13px 30px;
+    background: transparent;
+    color: #e8cdd3;
+    border: 1px solid #76505b;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+button:hover {
+    background: #7d3044;
+    border-color: #b86b7d;
+    transform: scale(1.05);
+}
+
+/* Floating hearts */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #a64c63;
+    font-size: 14px;
+    animation: float 9s linear infinite;
+    opacity: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    80% {
+        opacity: .3;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+/* Final screen */
+
+.final-heart {
+    font-size: 60px;
+    margin-bottom: 25px;
+    animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.final {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    line-height: 1.8;
+    color: #ded0d3;
+}
+
+.signature {
+    margin-top: 35px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: #ef9aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="grain"></div>
+
+<!-- Floating hearts -->
+<div class="heart" style="left:10%; animation-delay:1s;">♡</div>
+<div class="heart" style="left:25%; animation-delay:4s;">♥</div>
+<div class="heart" style="left:45%; animation-delay:2s;">♡</div>
+<div class="heart" style="left:65%; animation-delay:6s;">♥</div>
+<div class="heart" style="left:85%; animation-delay:3s;">♡</div>
+
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+    <div class="content">
+
+        <div class="small">something I need to say</div>
+
+        <div class="name">Amisha</div>
+
+        <div class="line"></div>
+
+        <div class="subtitle">
+            "Before anything else..."
+        </div>
+
+        <button onclick="nextPage(2)">
+            READ THIS
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+    <div class="content">
+
+        <div class="small">I'm sorry</div>
+
+        <div class="title">
+            I know I hurt you.
+        </div>
+
+        <div class="message">
+
+            And I wish I could go back to that moment
+            and choose my words differently.
+
+            <br><br>
+
+            I'm not going to make excuses.
+            If something I said or did made your heart
+            a little heavier,
+
+            <span class="highlight">
+                I'm genuinely sorry.
+            </span>
+
+        </div>
+
+        <button onclick="nextPage(3)">
+            KEEP READING
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="page" id="page3">
+
+    <div class="content">
+
+        <div class="small">one thing I want you to know</div>
+
+        <div class="message">
+
+            You mean more to me than my pride,
+            more than winning an argument,
+            and more than being right.
+
+            <br><br>
+
+            I don't want an apology to simply be words.
+
+            I want to learn from what happened,
+            understand you better,
+            and be softer with the heart
+            you've trusted me with.
+
+        </div>
+
+        <button onclick="nextPage(4)">
+            ONE LAST THING
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section class="page" id="page4">
+
+    <div class="content">
+
+        <div class="final-heart">♡</div>
+
+        <div class="small">for you, Amisha</div>
+
+        <div class="final">
+
+            I'm sorry.
+
+            <br>
+
+            Not because I want everything to go back
+            to normal immediately.
+
+            <br><br>
+
+            But because
+
+            <span class="highlight">
+                you deserve an apology that comes
+                from my heart.
+            </span>
+
+            <br><br>
+
+            I love you.
+
+        </div>
+
+        <div class="signature">
+            — yours, always.
+        </div>
+
+        <button onclick="forgive()">
+            ♡
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function nextPage(number) {
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById('page' + number)
+        .classList.add('active');
+}
+
+
+function forgive() {
+
+    document.querySelector('.final').innerHTML =
+        "Whatever happens next,<br><br>" +
+        "<span class='highlight'>" +
+        "thank you for being you, Amisha." +
+        "</span>";
+
+    document.querySelector('.signature').innerHTML =
+        "I love you. ❤️";
+
+}
+
+</script>
+
+</body>
+</html>
+
